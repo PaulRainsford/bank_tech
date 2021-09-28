@@ -15,6 +15,15 @@ describe Account do
     end
   end
 
+  context '#withdraw' do
+    it "should allow account holder to withdraw funds" do
+      subject.deposit(10)
+      subject.withdraw(5)
+      expect(subject.balance).to eq 5
+    end
+  end
+
+
 
 
 
