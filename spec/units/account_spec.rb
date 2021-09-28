@@ -27,6 +27,24 @@ describe Account do
     end
   end
 
+  context "#transaction" do
+    it "stores details of the transaction" do
+      subject.deposit(10.00)
+      expect(subject.last_transaction).to eq("#{Time.new.strftime("%d/%m/%Y")} || 10.00 ||  || 10.00")
+    end
+  end
+
+  context "#transactions_array" do
+    it "contains all the transactions" do
+      subject.deposit(10.00)
+      subject.withdraw(5.00)
+      expect(subject.transactions_array).to eq(["#{Time.new.strftime("%d/%m/%Y")} || 10.00 ||  || 10.00", "#{Time.new.strftime("%d/%m/%Y")} ||  || 5.00 || 5.00"])
+    end
+  end
+      
+
+
+  
 
 
 
