@@ -8,6 +8,14 @@ describe Account do
     end
   end
 
+  context '#deposit' do
+    it "should allow account holder to deposit funds" do
+      subject.deposit(10)
+      expect(subject.balance).to eq 10
+    end
+  end
+
+
 
 
 
