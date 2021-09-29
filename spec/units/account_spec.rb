@@ -3,6 +3,7 @@
 require 'account'
 
 describe Account do
+  let(:insufficient_funds) {"Sorry, insufficient funds"}
   context '#balance' do
     it 'should have default balance of zero' do
       expect(subject.balance).to eq(0)
@@ -14,6 +15,11 @@ describe Account do
       subject.deposit(10)
       expect(subject.balance).to eq 10
     end
+
+    it 'should return message after depositing funds' do
+      subject.deposit(10)
+      expect(subject.deposit(10)).to eq '10.00 deposited'
+    end
   end
 
   context '#withdraw' do
@@ -23,8 +29,14 @@ describe Account do
       expect(subject.balance).to eq 5
     end
 
-    it 'should raise an error if account holder tries to withdraw amount greater than balance' do
-      expect { subject.withdraw(20) }.to raise_error 'Sorry, insufficient funds'
+    it 'should return message after withdrawing funds' do
+      subject.deposit(10)
+      subject.withdraw(5)
+      expect(subject.withdraw(5)).to eq '5.00 withdrawn'
+    end
+
+    it 'should return error message if account holder tries to withdraw amount greater than balance' do
+      expect(subject.withdraw(20)).to eq(insufficient_funds)
     end
   end
 
