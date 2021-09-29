@@ -15,15 +15,16 @@ class Account
     @balance += amount
     amount = '%.2f' % amount
     transaction(date, amount, nil, balance)
+    "#{amount} deposited"
   end
 
   def withdraw(amount)
-    raise 'Sorry, insufficient funds' if @balance < amount
-
+    return 'Sorry, insufficient funds' if amount > @balance
     date = create_date
     @balance -= amount
     amount = '%.2f' % amount
     transaction(date, nil, amount, balance)
+    "#{amount} withdrawn"
   end
 
   def transaction(date, deposit, withdraw, balance)
