@@ -1,7 +1,7 @@
 # Bank Tech Test
 A tech test using Ruby focused on the production of best practice code, obeying OOd and TDD principles.
 
-## Specification
+## Specification
 Build a command line app, operating like a bank account, allowing a user to deposit funds, withdraw funds and see a statement showing the date, amount, and balance of all trancactions.
 
 ## Requirements
@@ -82,15 +82,19 @@ So I easily see most recent activity on account,
 I want the transactions on statement to be in reverse date order.
 ```
 ## Design
-I decided on two classes:<br>
-Account class<br>
+I decided on two classes:
+```
+Account class
   - A method for deposits
   - A method for Withdrawls
   - A method to handle transactions
   - A method to create the date
-Statement class<br>
+  ```
+  ```
+Statement class
   - A method to create a statement
   - A method to print the statement
+  ```
 
 ## Testing
 You can run the tests by typing the following:
