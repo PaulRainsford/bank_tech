@@ -3,7 +3,7 @@
 require 'account'
 
 describe Account do
-  let(:insufficient_funds) {"Sorry, insufficient funds"}
+  let(:insufficient_funds) { 'Sorry, insufficient funds' }
   context '#balance' do
     it 'should have default balance of zero' do
       expect(subject.balance).to eq(0)

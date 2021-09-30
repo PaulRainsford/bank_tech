@@ -20,6 +20,7 @@ class Account
 
   def withdraw(amount)
     return 'Sorry, insufficient funds' if amount > @balance
+
     date = create_date
     @balance -= amount
     amount = '%.2f' % amount
