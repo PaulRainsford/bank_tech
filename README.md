@@ -1,5 +1,5 @@
 # Bank Tech Test
-A tech test using Ruby focused on the production of best practice code, obeying OOd and TDD principles.
+A tech test using Ruby focused on the production of best practice code, obeying OOD and TDD principles.
 
 ## Specification
 Build a command line app, operating like a bank account, allowing a user to deposit funds, withdraw funds and see a statement showing the date, amount, and balance of all trancactions.
